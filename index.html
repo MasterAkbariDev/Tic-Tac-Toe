@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./custom.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <div class="main">
+      <div class="form-container">
+        <div class="input-container">
+          <input placeholder="3" class="input" type="number" id="n" value="3" />
+          <button class="start" id="start">Start</button>
+        </div>
+        <div>
+          <label for="playerFirst">
+            <input type="checkbox" id="playerFirst" checked /> Player First
+          </label>
+          <label for="pvp">
+            <input type="checkbox" id="pvp" /> Player vs Player
+          </label>
+        </div>
+      </div>
+      <p class="error hidden" id="error">Number should be more than 2!</p>
+      <div class="game hidden">
+        <div class="board" id="board"></div>
+        <div id="scoreboard">
+          <p id="player-1"></p>
+          <p id="player-2"></p>
+          <p id="draw"></p>
+        </div>
+        <div class="game-info hidden" id="game-info">
+          <h3 class="status" id="status"></h3>
+          <button class="restart" id="restart">Restart</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="module" src="./main.js"></script>
+  <script type="module" src="./decision-making.js"></script>
+</html>
