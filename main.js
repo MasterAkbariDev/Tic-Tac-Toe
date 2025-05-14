@@ -31,6 +31,7 @@ startButton.onclick = () => {
     n = parseInt(input.value, 10);
     isPlayerFirst = playerFirstCheckbox.checked;
     isPvP = pvpCheckbox.checked;
+    isPlayerOneTurn = true;
 
     player1Score.innerHTML = ''
     player2Score.innerHTML = ''

@@ -1,6 +1,7 @@
 export let isPlayerBlocked = false;
 
 export function generateTable(n) {
+    isPlayerBlocked = false;
     return Array.from({ length: n }, (_, row) =>
         Array.from({ length: n }, (_, col) => ({
             index: row * n + col,
