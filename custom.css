@@ -41,6 +41,11 @@ h1 {
   gap: 5px;
 }
 
+.checkboxes{
+  display: flex;
+  gap: 15px;
+}
+
 .input {
   flex: 1;
   padding: 10px;

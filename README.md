@@ -1,75 +1,84 @@
-🕹️ Tic Tac Toe Game
-A dynamic and flexible Tic Tac Toe game supporting any board size (NxN), Player vs Player (PvP) and Player vs Computer (AI) modes, complete with live score tracking and game result detection.
+Tic-Tac-Toe
+A dynamic and interactive Tic-Tac-Toe game built with JavaScript, featuring both Player vs Player (PvP) and Player vs Computer (PvC) modes. The project demonstrates algorithmic proficiency through the implementation of the Minimax algorithm and a memory-based decision-making system for the computer player.
+Features
 
-🚀 Features
-✅ Supports custom board sizes (e.g., 3x3, 4x4, etc.)
+Customizable Board Size: Play on any NxN board (N > 2) for increased flexibility and challenge.
+Game Modes:
+PvP Mode: Compete against another player.
+PvC Mode: Challenge an AI opponent with two difficulty levels:
+Hard Mode: Uses the Minimax algorithm to ensure optimal moves, making the computer unbeatable.
+Normal Mode: Employs a heuristic approach enhanced with memory-based decision-making, leveraging past game statistics for smarter moves.
 
-🧠 Play against another player or the computer
+Memory-Based AI: In normal mode, the computer learns from previous games stored in localStorage, prioritizing moves that historically led to wins or subreddit draws.
+Interactive UI:
+Visual feedback with animated X and O symbols.
+Draws a winning line to highlight the victorious combination.
+Displays real-time scores for players, computer, and draws.
 
-📊 Live score tracking for:
+Game History: Saves up to 100 recent games in localStorage for move analysis and AI improvement.
+Responsive Design: Grid-based layout adapts to different board sizes.
+Restart and Reset: Easily restart a game or start a new one with different settings.
 
-Player 1
+Technologies Used
 
-Player 2 or Computer
+JavaScript: Core logic for game mechanics and AI.
+HTML/CSS: Responsive UI with dynamic grid layout.
+LocalStorage: Persistent storage for game history and move statistics.
 
-Draws
+Installation
 
-🎯 Highlights the winning combination
+Clone the Repository:git clone https://github.com/MasterAkbariDev/Tic-Tac-Toe.git
 
-📢 Displays game status: win, draw, or ongoing
+Navigate to the Project Directory:cd tic-tac-toe
 
-📁 Project Structure
-text
-Copy
-Edit
-/
-├── index.html # HTML with scoreboard and game container
-├── style.css # Styling for board, scoreboard, and animations
-├── script.js # Main game logic, events, rendering
-└── utils.js # Includes checkState(), generateWiningCombination(), etc.
-🧠 Core Logic (checkState())
-The checkState() function:
+Serve the Application:
+Use a local server (e.g., with VS Code's Live Server extension) or open index.html in a browser.
+Alternatively, install a simple HTTP server:npm install -g http-server
+http-server
 
-Checks for winning combinations after each move.
+Access the game at http://localhost:8080.
 
-Determines the winner by evaluating if all values in a win combo are either "X" or "O".
+Usage
 
-Increments the score for the winning side.
+Start the Game:
+Enter a board size (N > 2) in the input field.
+Check "Player First" to decide who starts (player or computer).
+Check "PvP" for Player vs Player mode or leave unchecked for Player vs Computer.
+Click "Start" to begin.
 
-Updates scoreboard text content accordingly.
+Play:
+Click on cells to place your move ('X' or 'O').
+In PvC mode, the computer responds automatically.
+Toggle "Hard Mode" for Minimax-based AI or use normal mode for memory-based AI.
 
-Detects draw situations.
+View Results:
+Scores update in real-time for wins and draws.
+A winning line highlights the victorious combination.
 
-Shows messages via showGameStatus() and highlights winning cells using drawWinningLine().
+Restart:
+Click "Restart" to reset the board and start a new game.
 
-🛠️ How to Use
-Clone or download this repository.
+Project Structure
 
-Open index.html in a browser.
+index.html: Main HTML file for the game UI.
+styles.css: CSS for styling the board and UI elements.
+decision-making.js: Core game logic, including Minimax, memory-based AI, and game state management.
+TicTacToe.js: UI interaction and game flow management.
 
-Click on a cell to make a move.
+Algorithmic Highlights
 
-Play alternately as:
+Minimax Algorithm: Ensures the computer is unbeatable in hard mode by evaluating all possible game outcomes.
+Memory-Based Decision-Making: In normal mode, the AI uses statistics from past games to prioritize moves with higher win/draw probabilities, demonstrating adaptive learning.
+Efficient Board Management: Supports NxN boards with dynamic generation of winning combinations.
 
-Player 1 (X) and Player 2 (O) in PvP mode.
+Limitations
 
-Player (X) and Computer (O) in PvC mode.
+The Minimax algorithm in hard mode may slow down for very large boards (e.g., N > 5) due to the lack of Alpha-Beta Pruning.
+Normal mode AI relies on sufficient game history for optimal performance.
 
-View live scores in the scoreboard above the game board.
+Future Improvements
 
-🧩 Example DOM Elements
-Ensure these elements exist in your HTML for score tracking:
-
-html
-Copy
-Edit
-
-<div id="player-1">Player 1 Score: 0</div>
-<div id="player-2">Player 2 Score: 0</div> <!-- or "Computer Score: 0" -->
-<div id="draw">0</div>
-📌 Notes
-The game assumes each cell object has a .value and .index property.
-
-The board is a 2D array: board[row][col].
-
-Scores are extracted using regex to ensure accurate parsing.
+Implement Alpha-Beta Pruning to optimize Minimax for larger boards.
+Add unit tests using Jest to ensure code reliability.
+Enhance UI with animations and sound effects.
+Support multiplayer over a network using WebSockets.
